@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roblox Game Idea Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .idea-box {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Roblox Game Idea Generator</h1>
+  <div class="idea-box">
+    <div class="label">🎮 Title:</div>
+    <div id="title">Click the button below!</div>
+
+    <div class="label">🎯 Goal:</div>
+    <div id="goal"></div>
+
+    <div class="label">🛠️ Mechanics:</div>
+    <div id="mechanics"></div>
+
+    <div class="label">💥 Twist:</div>
+    <div id="twist"></div>
+
+    <div class="label">🧪 Genre:</div>
+    <div id="genre"></div>
+
+    <div class="label">🎨 Theme:</div>
+    <div id="theme"></div>
+
+    <button onclick="generateIdea()">Give Me an Idea</button>
+  </div>
+
+  <script>
+    const titles = ["Flooded Factory", "Bonk Royale", "Escape the Egg", "AFK Banana Simulator", "Code Rush", "Device Simulator", "Memory Wipe"];
+    const goals = ["Survive as long as possible", "Collect all hidden artifacts", "Destroy everything to level up", "Solve puzzles to escape", "Become the richest", "Find clues to stop the virus", "Click to get stronger"];
+    const mechanics = ["Clicking", "PvP combat", "Building tycoon-style", "Teleportation puzzles", "Resource farming", "Exploration", "Power upgrading"];
+    const twists = ["Everything is in reverse", "You lose power every minute", "Random events change physics", "You control multiple characters", "Players can sabotage each other", "Time loops every 2 minutes"];
+    const genres = ["Simulator", "Tycoon", "Horror", "Adventure", "Obby", "PvP", "Strategy"];
+    const themes = ["Abandoned lab", "Sky island", "Corrupted computer world", "Banana kingdom", "Dreamscape", "Haunted toy store"];
+
+    function randomFrom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function generateIdea() {
+      document.getElementById("title").textContent = randomFrom(titles);
+      document.getElementById("goal").textContent = randomFrom(goals);
+      document.getElementById("mechanics").textContent = randomFrom(mechanics);
+      document.getElementById("twist").textContent = randomFrom(twists);
+      document.getElementById("genre").textContent = randomFrom(genres);
+      document.getElementById("theme").textContent = randomFrom(themes);
+    }
+  </script>
+</body>
+</html>
